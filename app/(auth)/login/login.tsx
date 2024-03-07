@@ -49,6 +49,7 @@ const Login = () => {
       toast.error(res?.error);
     }
     router.refresh();
+    router.push("/");
   };
 
   return (

@@ -79,3 +79,12 @@ export const changePasswordSchema = z
 export const otpFormSchema = z.object({
   otp: otpSchema,
 });
+
+export const createPostSchema = z.object({
+  imageUrl: z.string().url(),
+  description: z.string().min(1, { message: "Description is required" }),
+});
+
+export const deletePostSchema = z.object({
+  postId: z.string().min(1, { message: "Post id is required" }),
+});

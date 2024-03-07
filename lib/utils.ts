@@ -15,3 +15,14 @@ export function isDateExpired(date: Date): boolean {
   const currentDate = new Date();
   return date.getTime() < currentDate.getTime();
 }
+
+export function formatNumber(number: number): string {
+  // Create a NumberFormat instance with the appropriate options
+  const formatter = new Intl.NumberFormat("en-US", {
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 2,
+  });
+
+  // Format the number
+  return formatter.format(number);
+}
